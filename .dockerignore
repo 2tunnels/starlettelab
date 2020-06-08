@@ -1,0 +1,9 @@
+# Directories
+.git/
+.idea/
+.pytest_cache/
+.junit/
+__pycache__/
+
+# Files
+.coverage

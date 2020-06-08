@@ -19,3 +19,9 @@ lint-safety:
 	safety check --full-report
 
 lint: lint-isort lint-black lint-safety
+
+docker-build:
+	docker image build -t starlettelab .
+
+docker-run:
+	docker container run -it -p 8000:8000 starlettelab
