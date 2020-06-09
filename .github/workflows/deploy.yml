@@ -1,0 +1,32 @@
+name: deploy
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup gcloud
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+      - name: Get credentials
+        run: |-
+          gcloud container clusters get-credentials ${{ secrets.GCP_CLUSTER }} \
+            --zone ${{ secrets.GCP_ZONE }} \
+            --project ${{ secrets.GCP_PROJECT_ID }}
+      - name: Deploy
+        run: |-
+          helm upgrade --dry-run \
+            --atomic \
+            --install \
+            --namespace starlettelab \
+            --set image.tag=${GITHUB_REF} \
+            starlettelab \
+            ./charts/starlettelab/
