@@ -23,10 +23,11 @@ jobs:
             --project ${{ secrets.GCP_PROJECT_ID }}
       - name: Deploy
         run: |-
-          helm upgrade --dry-run \
+          IMAGE_TAG=$(echo $GITHUB_REF | cut -d / -f 3)
+          helm upgrade \
             --atomic \
             --install \
             --namespace starlettelab \
-            --set image.tag=${GITHUB_REF} \
+            --set image.tag=${IMAGE_TAG} \
             starlettelab \
             ./charts/starlettelab/
