@@ -35,6 +35,6 @@ helm-upgrade:
 		starlettelab \
 		./charts/starlettelab/
 
-release-patch:
+bump-patch:
 	bump2version patch
 	git push --follow-tags
