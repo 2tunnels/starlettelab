@@ -41,3 +41,7 @@ helm-upgrade:
 bump-patch:
 	bump2version patch
 	git push --follow-tags
+
+bump-minor:
+	bump2version minor
+	git push --follow-tags
