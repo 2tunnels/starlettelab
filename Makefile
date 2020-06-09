@@ -34,3 +34,7 @@ helm-upgrade:
 		--set image.tag=v0.1.5 \
 		starlettelab \
 		./charts/starlettelab/
+
+release-patch:
+	bump2version patch
+	git push --follow-tags
