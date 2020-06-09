@@ -26,6 +26,8 @@ jobs:
         run: make lint-isort
       - name: Lint with black
         run: make lint-black
+      - name: Lint with mypy
+        run: make lint-mypy
       - name: Lint with safety
         run: make lint-safety
   test:
