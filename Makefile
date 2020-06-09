@@ -25,3 +25,12 @@ docker-build:
 
 docker-run:
 	docker container run -it -p 8000:8000 starlettelab
+
+helm-upgrade:
+	helm upgrade \
+		--atomic \
+		--install \
+		--namespace starlettelab \
+		--set image.tag=v0.1.2 \
+		starlettelab \
+		./charts/starlettelab/

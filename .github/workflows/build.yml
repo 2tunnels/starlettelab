@@ -1,9 +1,9 @@
-name: deploy
+name: build
 
 on:
   release:
     types:
-      - published
+      - created
 
 jobs:
   build:
