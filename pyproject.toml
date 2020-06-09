@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "starlettelab"
-version = "0.1.9"
+version = "0.1.10"
 description = "Playing with Starlette"
 authors = ["Vlad Dmitrievich <me@2tunnels.com>"]
 license = "MIT"
