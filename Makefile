@@ -15,10 +15,13 @@ lint-isort:
 lint-black:
 	black --check .
 
+lint-mypy:
+	mypy .
+
 lint-safety:
 	safety check --full-report
 
-lint: lint-isort lint-black lint-safety
+lint: lint-isort lint-black lint-mypy lint-safety
 
 docker-build:
 	docker image build -t starlettelab .
