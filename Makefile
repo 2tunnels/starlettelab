@@ -31,6 +31,6 @@ helm-upgrade:
 		--atomic \
 		--install \
 		--namespace starlettelab \
-		--set image.tag=v0.1.2 \
+		--set image.tag=v0.1.3 \
 		starlettelab \
 		./charts/starlettelab/
