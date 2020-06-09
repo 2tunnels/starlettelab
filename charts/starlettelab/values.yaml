@@ -21,7 +21,6 @@ ingress:
     kubernetes.io/ingress.class: nginx
   hosts:
     - host: starlettelab.2tunnels.com
-      paths: []
 
 resources: {}
 
