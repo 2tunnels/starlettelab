@@ -3,7 +3,7 @@
 set -e
 
 if [ "$1" = "gunicorn" ]; then
-	exec gunicorn starlettelab.app:application \
+	exec gunicorn starlettelab.main:application \
 	  --worker-class uvicorn.workers.UvicornWorker \
 	  --bind 0.0.0.0:8000 \
 	  --access-logfile "-" \

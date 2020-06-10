@@ -11,6 +11,9 @@ fullnameOverride: ""
 
 podAnnotations: {}
 
+secrets:
+  EXCEPTION_SECRET: CHANGE-ME
+
 service:
   type: ClusterIP
   port: 80

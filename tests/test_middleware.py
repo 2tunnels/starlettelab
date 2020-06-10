@@ -1,6 +1,6 @@
 from starlette.testclient import TestClient
 
-from starlettelab.app import application
+from starlettelab.main import application
 
 
 def test_foo() -> None:
