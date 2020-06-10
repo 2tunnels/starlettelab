@@ -2,11 +2,11 @@ from starlette.requests import Request
 from starlette.responses import JSONResponse
 
 
-def home(request: Request) -> JSONResponse:
+async def home(request: Request) -> JSONResponse:
     return JSONResponse({"message": "Hello world!"})
 
 
-def hello(request: Request) -> JSONResponse:
+async def hello(request: Request) -> JSONResponse:
     name = request.path_params["name"]
 
     if name == "jon":

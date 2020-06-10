@@ -1,6 +1,8 @@
 from starlette.applications import Starlette
+from starlette.middleware import Middleware
 from starlette.routing import Route
 
+from .middleware import FooMiddleware
 from .routes import hello, home
 
 routes = [
@@ -8,4 +10,4 @@ routes = [
     Route("/hello/{name}", hello),
 ]
 
-application = Starlette(routes=routes)
+application = Starlette(routes=routes, middleware=[Middleware(FooMiddleware)])
