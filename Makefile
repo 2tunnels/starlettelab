@@ -35,6 +35,7 @@ helm-upgrade:
 		--install \
 		--namespace starlettelab \
 		--set image.tag=v0.3.0 \
+		--set secrets.EXCEPTION_SECRET=swordfish \
 		starlettelab \
 		./charts/starlettelab/
 

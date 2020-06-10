@@ -29,6 +29,6 @@ jobs:
             --install \
             --namespace starlettelab \
             --set image.tag=${IMAGE_TAG} \
-            --set secrets.EXCEPTION_SECRET=${EXCEPTION_SECRET} \
+            --set secrets.EXCEPTION_SECRET=${{ secrets.EXCEPTION_SECRET }} \
             starlettelab \
             ./charts/starlettelab/
