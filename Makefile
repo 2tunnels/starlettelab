@@ -34,7 +34,7 @@ helm-upgrade:
 		--atomic \
 		--install \
 		--namespace starlettelab \
-		--set image.tag=v0.3.2 \
+		--set image.tag=v0.3.3 \
 		--set secrets.EXCEPTION_SECRET=swordfish \
 		--set secrets.BUGSNAG_API_KEY=secret \
 		starlettelab \
