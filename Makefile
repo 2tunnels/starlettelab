@@ -40,10 +40,10 @@ helm-upgrade:
 		starlettelab \
 		./charts/starlettelab/
 
-bump-patch:
+patch:
 	bump2version patch
 	git push --follow-tags
 
-bump-minor:
+minor:
 	bump2version minor
 	git push --follow-tags
