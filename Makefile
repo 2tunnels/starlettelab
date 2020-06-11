@@ -36,6 +36,7 @@ helm-upgrade:
 		--namespace starlettelab \
 		--set image.tag=v0.3.1 \
 		--set secrets.EXCEPTION_SECRET=swordfish \
+		--set secrets.BUGSNAG_API_KEY=secret \
 		starlettelab \
 		./charts/starlettelab/
 

@@ -30,5 +30,6 @@ jobs:
             --namespace starlettelab \
             --set image.tag=${IMAGE_TAG} \
             --set secrets.EXCEPTION_SECRET=${{ secrets.EXCEPTION_SECRET }} \
+            --set secrets.BUGSNAG_API_KEY=${{ secrets.BUGSNAG_API_KEY }} \
             starlettelab \
             ./charts/starlettelab/

@@ -2,9 +2,9 @@ from starlette.applications import Starlette
 from starlette.middleware import Middleware
 from starlette.routing import Route
 
-from .middleware import FooMiddleware
+from .middleware import BugsnagMiddleware, FooMiddleware
 from .routes import exception, hello, home
-from .settings import DEBUG
+from .settings import BUGSNAG_API_KEY, DEBUG
 
 routes = [
     Route("/", home),
@@ -13,5 +13,10 @@ routes = [
 ]
 
 application = Starlette(
-    debug=DEBUG, routes=routes, middleware=[Middleware(FooMiddleware)]
+    debug=DEBUG,
+    routes=routes,
+    middleware=[
+        Middleware(FooMiddleware),
+        Middleware(BugsnagMiddleware, api_key=str(BUGSNAG_API_KEY)),
+    ],
 )

@@ -13,6 +13,7 @@ podAnnotations: {}
 
 secrets:
   EXCEPTION_SECRET: CHANGE-ME
+  BUGSNAG_API_KEY: CHANGE-ME
 
 service:
   type: ClusterIP

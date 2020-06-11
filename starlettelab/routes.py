@@ -1,3 +1,5 @@
+import random
+
 from starlette.requests import Request
 from starlette.responses import JSONResponse
 from starlette.status import HTTP_403_FORBIDDEN
@@ -24,6 +26,7 @@ async def exception(request: Request) -> JSONResponse:
     """Route for testing error logging, monitoring and reporting."""
 
     secret = request.path_params["secret"]
+    random_number = random.random()  # noqa
 
     if secret == str(EXCEPTION_SECRET):
         raise RuntimeError("You guessed the secret!")
