@@ -4,11 +4,16 @@ from starlette.requests import Request
 from starlette.responses import JSONResponse
 from starlette.status import HTTP_403_FORBIDDEN
 
+from . import __version__
 from .settings import EXCEPTION_SECRET
 
 
 async def home(request: Request) -> JSONResponse:
     return JSONResponse({"message": "Hello world!"})
+
+
+async def health(request: Request) -> JSONResponse:
+    return JSONResponse({"version": __version__})
 
 
 async def hello(request: Request) -> JSONResponse:

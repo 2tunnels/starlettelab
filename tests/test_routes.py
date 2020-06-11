@@ -1,5 +1,6 @@
 from starlette.testclient import TestClient
 
+from starlettelab import __version__
 from starlettelab.main import application
 
 
@@ -9,6 +10,14 @@ def test_home() -> None:
 
     assert response.status_code == 200
     assert response.json() == {"message": "Hello world!"}
+
+
+def test_health() -> None:
+    client = TestClient(application)
+    response = client.get("/health")
+
+    assert response.status_code == 200
+    assert response.json() == {"version": __version__}
 
 
 def test_hello_jon() -> None:
