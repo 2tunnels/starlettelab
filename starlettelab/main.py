@@ -1,8 +1,9 @@
 from starlette.applications import Starlette
 from starlette.middleware import Middleware
 from starlette.routing import Route
+from starlette_x_bugsnag.middleware import BugsnagMiddleware
 
-from .middleware import BugsnagMiddleware, FooMiddleware
+from .middleware import FooMiddleware
 from .routes import exception, hello, home
 from .settings import BUGSNAG_API_KEY, DEBUG
 

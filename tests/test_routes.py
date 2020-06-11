@@ -36,7 +36,6 @@ def test_exception_wrong_secret() -> None:
 
 
 def test_exception_right_secret() -> None:
-    # TODO: Mock bugsnag client
     client = TestClient(application, raise_server_exceptions=False)
     response = client.get("/exception/swordfish")
 
